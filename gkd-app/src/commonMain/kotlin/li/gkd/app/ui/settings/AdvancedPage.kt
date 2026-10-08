@@ -97,6 +97,7 @@ import li.gkd.app.ui.navigation.ActivityLogRoute
 import li.gkd.app.ui.navigation.CrashReportRoute
 import li.gkd.app.ui.navigation.SnapshotPageRoute
 import li.gkd.app.ui.navigation.SnapshotSettingsRoute
+import li.gkd.app.ui.navigation.SelectorPickerRoute
 import li.gkd.app.ui.platform.UiHost
 import li.gkd.app.ui.style.TABULAR_NUMBERS_FONT_FEATURE
 import li.gkd.app.ui.style.itemHorizontalPadding
@@ -220,6 +221,11 @@ fun AdvancedPage(
                 title = stringResource(Res.string.snapshot_records),
                 subtitle = stringResource(Res.string.snapshot_records_description),
                 onClick = { mainVm.navigator.navigate(SnapshotPageRoute) },
+            )
+            GkSettingItem(
+                title = stringResource(Res.string.selector_picker),
+                subtitle = stringResource(Res.string.selector_picker_description),
+                onClick = { mainVm.navigator.navigate(SelectorPickerRoute()) },
             )
             GkTextSwitch(
                 title = stringResource(Res.string.snapshot_button_label),
