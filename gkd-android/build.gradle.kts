@@ -20,7 +20,7 @@ plugins {
 android {
     namespace = "li.gkd.android"
     defaultConfig {
-        applicationId = "li.songe.gkd"
+        applicationId = "li.songe.gkd.custom"
         versionCode = rootProject.extra["gkdVersionCode"] as Int
         versionName = rootProject.extra["gkdVersionName"] as String
 
