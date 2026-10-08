@@ -1,1 +1,89 @@
-cGFja2FnZSBsaS5na2QuYXBwLnVpLm5hdmlnYXRpb24KCmltcG9ydCBhbmRyb2lkeC5jb21wb3NlLnJ1bnRpbWUuQ29tcG9zYWJsZQppbXBvcnQgYW5kcm9pZHgubmF2aWdhdGlvbjMucnVudGltZS5OYXZFbnRyeQppbXBvcnQgbGkuZ2tkLmFwcC51aS5JbWFnZVByZXZpZXdQYWdlCmltcG9ydCBsaS5na2QuYXBwLnVpLk1haW5WaWV3TW9kZWwKaW1wb3J0IGxpLmdrZC5hcHAudWkuUHJpdmlsZWdlU2VydmljZVBhZ2UKaW1wb3J0IGxpLmdrZC5hcHAudWkuU2VsZWN0b3JQaWNrZXJQYWdlCmltcG9ydCBsaS5na2QuYXBwLnVpLldlYlZpZXdQYWdlCmltcG9ydCBsaS5na2QuYXBwLnVpLmNyYXNoLkNyYXNoUmVwb3J0UGFnZQppbXBvcnQgbGkuZ2tkLmFwcC51aS5ob21lLkFjdGlvblRvYXN0UGFnZQppbXBvcnQgbGkuZ2tkLmFwcC51aS5ob21lLkJsb2NrQTExeVNldHVwUGFnZQppbXBvcnQgbGkuZ2tkLmFwcC51aS5ob21lLkhvbWVQYWdlCmltcG9ydCBsaS5na2QuYXBwLnVpLmhvbWUuTm90aWZpY2F0aW9uVGV4dFBhZ2UKaW1wb3J0IGxpLmdrZC5hcHAudWkubG9nLkExMXlFdmVudExvZ1BhZ2UKaW1wb3J0IGxpLmdrZC5hcHAudWkubG9nLkFjdGl2aXR5TG9nUGFnZQppbXBvcnQgbGkuZ2tkLmFwcC51aS5wbGF0Zm9ybS5VaUhvc3QKaW1wb3J0IGxpLmdrZC5hcHAudWkuc2V0dGluZ3MuQTExeVNjb3BlQXBwTGlzdFBhZ2UKaW1wb3J0IGxpLmdrZC5hcHAudWkuc2V0dGluZ3MuQWJvdXRQYWdlCmltcG9ydCBsaS5na2QuYXBwLnVpLnNldHRpbmdzLkFkdmFuY2VkUGFnZQppbXBvcnQgbGkuZ2tkLmFwcC51aS5zZXR0aW5ncy5BcHBXaGl0ZWxpc3RQYWdlCmltcG9ydCBsaS5na2QuYXBwLnVpLnNldHRpbmdzLkJsb2NrQTExeUFwcExpc3RQYWdlCmltcG9ydCBsaS5na2QuYXBwLnVpLnNldHRpbmdzLldvcmtNb2RlUGFnZQppbXBvcnQgbGkuZ2tkLmFwcC51aS5zbmFwc2hvdC5TbmFwc2hvdFBhZ2UKaW1wb3J0IGxpLmdrZC5hcHAudWkuc25hcHNob3QuU25hcHNob3RQcmV2aWV3UGFnZQppbXBvcnQgbGkuZ2tkLmFwcC51aS5zbmFwc2hvdC5TbmFwc2hvdFNldHRpbmdzUGFnZQppbXBvcnQgbGkuZ2tkLmFwcC51aS5zdWJzY3JpcHRpb24uQWN0aW9uTG9nUGFnZQppbXBvcnQgbGkuZ2tkLmFwcC51aS5zdWJzY3JpcHRpb24uQXBwQ29uZmlnUGFnZQppbXBvcnQgbGkuZ2tkLmFwcC51aS5zdWJzY3JpcHRpb24uQ2F0ZWdvcnlFZGl0b3JQYWdlCmltcG9ydCBsaS5na2QuYXBwLnVpLnN1YnNjcmlwdGlvbi5SdWxlRXhjbHVkZUVkaXRvclBhZ2UKaW1wb3J0IGxpLmdrZC5hcHAudWkuc3Vic2NyaXB0aW9uLlN1YnNBcHBHcm91cExpc3RQYWdlCmltcG9ydCBsaS5na2QuYXBwLnVpLnN1YnNjcmlwdGlvbi5TdWJzQXBwTGlzdFBhZ2UKaW1wb3J0IGxpLmdrZC5hcHAudWkuc3Vic2NyaXB0aW9uLlN1YnNDYXRlZ29yeUdyb3VwUGFnZQppbXBvcnQgbGkuZ2tkLmFwcC51aS5zdWJzY3JpcHRpb24uU3Vic0NhdGVnb3J5UGFnZQppbXBvcnQgbGkuZ2tkLmFwcC51aS5zdWJzY3JpcHRpb24uU3Vic0dsb2JhbEdyb3VwRXhjbHVkZVBhZ2UKaW1wb3J0IGxpLmdrZC5hcHAudWkuc3Vic2NyaXB0aW9uLlN1YnNHbG9iYWxHcm91cExpc3RQYWdlCmltcG9ydCBsaS5na2QuYXBwLnVpLnN1YnNjcmlwdGlvbi5VcHNlcnRSdWxlR3JvdXBQYWdlCgovKiogU2hhcmVkIHByb2R1Y3Rpb24gcm91dGUgcmVnaXN0cnkgZm9yIGJvdGggaG9zdHMuICovCkBDb21wb3NhYmxlCmZ1biBHa0FwcE5hdmlnYXRpb24oCiAgICBob3N0OiBVaUhvc3QsCikgewogICAgdmFsIG1haW5WbSA9IE1haW5WaWV3TW9kZWwucmVxdWlyZUN1cnJlbnQoKQogICAgR2tOYXZpZ2F0aW9uKG1haW5WbS5uYXZpZ2F0b3IuYmFja1N0YWNrLCBtYWluVm0ubmF2aWdhdG9yOjpwb3ApIHsgZW50cnkgLT4KICAgICAgICB2YWwgcm91dGUgPSBlbnRyeS5yb3V0ZQogICAgICAgIE5hdkVudHJ5KAogICAgICAgICAgICBlbnRyeSwKICAgICAgICAgICAgY29udGVudEtleSA9IGVudHJ5LmlkLAogICAgICAgICAgICBtZXRhZGF0YSA9IHJvdXRlLnRyYW5zaXRpb24udG9NZXRhZGF0YSgpLAogICAgICAgICkgewogICAgICAgICAgICB3aGVuIChyb3V0ZSkgewogICAgICAgICAgICAgICAgaXMgU3Vic0FwcExpc3RSb3V0ZSAtPiBTdWJzQXBwTGlzdFBhZ2UoaG9zdCwgcm91dGUpCiAgICAgICAgICAgICAgICBpcyBTdWJzQXBwR3JvdXBMaXN0Um91dGUgLT4gU3Vic0FwcEdyb3VwTGlzdFBhZ2Uocm91dGUpCiAgICAgICAgICAgICAgICBpcyBTdWJzR2xvYmFsR3JvdXBMaXN0Um91dGUgLT4gU3Vic0dsb2JhbEdyb3VwTGlzdFBhZ2Uocm91dGUpCiAgICAgICAgICAgICAgICBpcyBTdWJzR2xvYmFsR3JvdXBFeGNsdWRlUm91dGUgLT4gU3Vic0dsb2JhbEdyb3VwRXhjbHVkZVBhZ2UoaG9zdCwgcm91dGUpCiAgICAgICAgICAgICAgICBpcyBTdWJzQ2F0ZWdvcnlSb3V0ZSAtPiBTdWJzQ2F0ZWdvcnlQYWdlKHJvdXRlKQogICAgICAgICAgICAgICAgaXMgU3Vic0NhdGVnb3J5R3JvdXBSb3V0ZSAtPiBTdWJzQ2F0ZWdvcnlHcm91cFBhZ2Uocm91dGUpCiAgICAgICAgICAgICAgICBpcyBSdWxlRXhjbHVkZUVkaXRvclJvdXRlIC0+IFJ1bGVFeGNsdWRlRWRpdG9yUGFnZShob3N0LCByb3V0ZSkKICAgICAgICAgICAgICAgIGlzIEFwcENvbmZpZ1JvdXRlIC0+IEFwcENvbmZpZ1BhZ2Uocm91dGUpCiAgICAgICAgICAgICAgICBpcyBBY3Rpb25Mb2dSb3V0ZSAtPiBBY3Rpb25Mb2dQYWdlKHJvdXRlKQogICAgICAgICAgICAgICAgaXMgVXBzZXJ0UnVsZUdyb3VwUm91dGUgLT4gVXBzZXJ0UnVsZUdyb3VwUGFnZShob3N0LCByb3V0ZSkKICAgICAgICAgICAgICAgIGlzIENhdGVnb3J5RWRpdG9yUm91dGUgLT4gQ2F0ZWdvcnlFZGl0b3JQYWdlKGhvc3QsIHJvdXRlKQogICAgICAgICAgICAgICAgaXMgU25hcHNob3RQcmV2aWV3Um91dGUgLT4gU25hcHNob3RQcmV2aWV3UGFnZShob3N0LCByb3V0ZSkKICAgICAgICAgICAgICAgIGlzIFNlbGVjdG9yUGlja2VyUm91dGUgLT4gU2VsZWN0b3JQaWNrZXJQYWdlKHJvdXRlLCBob3N0KQogICAgICAgICAgICAgICAgaXMgV2ViVmlld1JvdXRlIC0+IFdlYlZpZXdQYWdlKHJvdXRlLCBob3N0KQogICAgICAgICAgICAgICAgaXMgSW1hZ2VQcmV2aWV3Um91dGUgLT4gSW1hZ2VQcmV2aWV3UGFnZShob3N0LCByb3V0ZSkKCiAgICAgICAgICAgICAgICBBY3Rpdml0eUxvZ1JvdXRlIC0+IEFjdGl2aXR5TG9nUGFnZSgpCiAgICAgICAgICAgICAgICBBMTF5RXZlbnRMb2dSb3V0ZSAtPiBBMTF5RXZlbnRMb2dQYWdlKCkKICAgICAgICAgICAgICAgIEExMVlTY29wZUFwcExpc3RSb3V0ZSAtPiBBMTF5U2NvcGVBcHBMaXN0UGFnZShob3N0KQogICAgICAgICAgICAgICAgQmxvY2tBMTF5QXBwTGlzdFJvdXRlIC0+IEJsb2NrQTExeUFwcExpc3RQYWdlKGhvc3QpCiAgICAgICAgICAgICAgICBFZGl0QmxvY2tBcHBMaXN0Um91dGUgLT4gQXBwV2hpdGVsaXN0UGFnZShob3N0KQogICAgICAgICAgICAgICAgU25hcHNob3RQYWdlUm91dGUgLT4gU25hcHNob3RQYWdlKGhvc3QpCiAgICAgICAgICAgICAgICBIb21lUm91dGUgLT4gSG9tZVBhZ2UoaG9zdCkKICAgICAgICAgICAgICAgIEFjdGlvblRvYXN0Um91dGUgLT4gQWN0aW9uVG9hc3RQYWdlKGhvc3QpCiAgICAgICAgICAgICAgICBOb3RpZmljYXRpb25UZXh0Um91dGUgLT4gTm90aWZpY2F0aW9uVGV4dFBhZ2UoaG9zdCkKICAgICAgICAgICAgICAgIFdvcmtNb2RlUm91dGUgLT4gV29ya01vZGVQYWdlKGhvc3QpCiAgICAgICAgICAgICAgICBBYm91dFJvdXRlIC0+IEFib3V0UGFnZShob3N0KQogICAgICAgICAgICAgICAgQmxvY2tBMTF5U2V0dXBSb3V0ZSAtPiBCbG9ja0ExMXlTZXR1cFBhZ2UoaG9zdCkKICAgICAgICAgICAgICAgIEFkdmFuY2VkUGFnZVJvdXRlIC0+IEFkdmFuY2VkUGFnZShob3N0KQogICAgICAgICAgICAgICAgUHJpdmlsZWdlU2VydmljZVJvdXRlIC0+IFByaXZpbGVnZVNlcnZpY2VQYWdlKGhvc3QpCiAgICAgICAgICAgICAgICBTbmFwc2hvdFNldHRpbmdzUm91dGUgLT4gU25hcHNob3RTZXR0aW5nc1BhZ2UoaG9zdCkKICAgICAgICAgICAgICAgIENyYXNoUmVwb3J0Um91dGUgLT4gQ3Jhc2hSZXBvcnRQYWdlKCkKICAgICAgICAgICAgfQogICAgICAgIH0KICAgIH0KfQoK
+package li.gkd.app.ui.navigation
+
+import androidx.compose.runtime.Composable
+import androidx.navigation3.runtime.NavEntry
+import li.gkd.app.ui.ImagePreviewPage
+import li.gkd.app.ui.MainViewModel
+import li.gkd.app.ui.PrivilegeServicePage
+import li.gkd.app.ui.SelectorPickerPage
+import li.gkd.app.ui.WebViewPage
+import li.gkd.app.ui.crash.CrashReportPage
+import li.gkd.app.ui.home.ActionToastPage
+import li.gkd.app.ui.home.BlockA11ySetupPage
+import li.gkd.app.ui.home.HomePage
+import li.gkd.app.ui.home.NotificationTextPage
+import li.gkd.app.ui.log.A11yEventLogPage
+import li.gkd.app.ui.log.ActivityLogPage
+import li.gkd.app.ui.platform.UiHost
+import li.gkd.app.ui.settings.A11yScopeAppListPage
+import li.gkd.app.ui.settings.AboutPage
+import li.gkd.app.ui.settings.AdvancedPage
+import li.gkd.app.ui.settings.AppWhitelistPage
+import li.gkd.app.ui.settings.BlockA11yAppListPage
+import li.gkd.app.ui.settings.WorkModePage
+import li.gkd.app.ui.snapshot.SnapshotPage
+import li.gkd.app.ui.snapshot.SnapshotPreviewPage
+import li.gkd.app.ui.snapshot.SnapshotSettingsPage
+import li.gkd.app.ui.subscription.ActionLogPage
+import li.gkd.app.ui.subscription.AppConfigPage
+import li.gkd.app.ui.subscription.CategoryEditorPage
+import li.gkd.app.ui.subscription.RuleExcludeEditorPage
+import li.gkd.app.ui.subscription.SubsAppGroupListPage
+import li.gkd.app.ui.subscription.SubsAppListPage
+import li.gkd.app.ui.subscription.SubsCategoryGroupPage
+import li.gkd.app.ui.subscription.SubsCategoryPage
+import li.gkd.app.ui.subscription.SubsGlobalGroupExcludePage
+import li.gkd.app.ui.subscription.SubsGlobalGroupListPage
+import li.gkd.app.ui.subscription.UpsertRuleGroupPage
+
+/** Shared production route registry for both hosts. */
+@Composable
+fun GkAppNavigation(
+    host: UiHost,
+) {
+    val mainVm = MainViewModel.requireCurrent()
+    GkNavigation(mainVm.navigator.backStack, mainVm.navigator::pop) { entry ->
+        val route = entry.route
+        NavEntry(
+            entry,
+            contentKey = entry.id,
+            metadata = route.transition.toMetadata(),
+        ) {
+            when (route) {
+                is SubsAppListRoute -> SubsAppListPage(host, route)
+                is SubsAppGroupListRoute -> SubsAppGroupListPage(route)
+                is SubsGlobalGroupListRoute -> SubsGlobalGroupListPage(route)
+                is SubsGlobalGroupExcludeRoute -> SubsGlobalGroupExcludePage(host, route)
+                is SubsCategoryRoute -> SubsCategoryPage(route)
+                is SubsCategoryGroupRoute -> SubsCategoryGroupPage(route)
+                is RuleExcludeEditorRoute -> RuleExcludeEditorPage(host, route)
+                is AppConfigRoute -> AppConfigPage(route)
+                is ActionLogRoute -> ActionLogPage(route)
+                is UpsertRuleGroupRoute -> UpsertRuleGroupPage(host, route)
+                is CategoryEditorRoute -> CategoryEditorPage(host, route)
+                is SnapshotPreviewRoute -> SnapshotPreviewPage(host, route)
+                is SelectorPickerRoute -> SelectorPickerPage(route, host)
+                is WebViewRoute -> WebViewPage(route, host)
+                is ImagePreviewRoute -> ImagePreviewPage(host, route)
+
+                ActivityLogRoute -> ActivityLogPage()
+                A11yEventLogRoute -> A11yEventLogPage()
+                A11YScopeAppListRoute -> A11yScopeAppListPage(host)
+                BlockA11yAppListRoute -> BlockA11yAppListPage(host)
+                EditBlockAppListRoute -> AppWhitelistPage(host)
+                SnapshotPageRoute -> SnapshotPage(host)
+                HomeRoute -> HomePage(host)
+                ActionToastRoute -> ActionToastPage(host)
+                NotificationTextRoute -> NotificationTextPage(host)
+                WorkModeRoute -> WorkModePage(host)
+                AboutRoute -> AboutPage(host)
+                BlockA11ySetupRoute -> BlockA11ySetupPage(host)
+                AdvancedPageRoute -> AdvancedPage(host)
+                PrivilegeServiceRoute -> PrivilegeServicePage(host)
+                SnapshotSettingsRoute -> SnapshotSettingsPage(host)
+                CrashReportRoute -> CrashReportPage()
+            }
+        }
+    }
+}
+
