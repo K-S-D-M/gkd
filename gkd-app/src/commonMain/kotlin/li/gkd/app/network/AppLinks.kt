@@ -8,6 +8,8 @@ object AppLinks {
     const val FileShort = "https://f.gkd.li/"
     const val ServerScript =
         "https://registry.npmmirror.com/@gkd-kit/config/latest/files/dist/server.js"
+    const val PresetSubscription =
+        "https://k-s-d-m.github.io/gkd-subscription-public/gkd.json5"
     const val PlayStore = "https://play.google.com/store/apps/details?id=li.songe.gkd"
     const val CookieHelp = "https://gkd.li?r=1"
     const val WorkModeHelp = "https://gkd.li?r=2"

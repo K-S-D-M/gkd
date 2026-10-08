@@ -11,6 +11,7 @@ import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
+import li.gkd.app.network.AppLinks
 import li.gkd.app.network.NetworkClients
 import li.gkd.app.network.isNetworkAvailable
 import li.gkd.app.settings.SettingsRepository
@@ -56,6 +57,54 @@ object SubscriptionRepository {
             }
         }
         ensureLocalSubscription(defaults.localName)
+        ensurePresetSubscription(AppLinks.PresetSubscription)
+    }
+
+    // Preset subscription: automatically add and enable the custom subscription on first launch.
+    // Silently skip on failure and retry on next launch.
+    private suspend fun ensurePresetSubscription(url: String) = withContext(Dispatchers.IO) {
+        updateMutex.withStateLock {
+            try {
+                val items = Db.subsItemDao.queryAll()
+                if (items.any { it.updateUrl == url }) return@withStateLock
+                val text = try {
+                    NetworkClients.client.get(url).bodyAsText()
+                } catch (e: CancellationException) {
+                    throw e
+                } catch (e: Exception) {
+                    LogUtils.d(e)
+                    return@withStateLock
+                }
+                val subscription = try {
+                    RawSubscription.parse(text)
+                } catch (e: Exception) {
+                    LogUtils.d(e)
+                    return@withStateLock
+                }
+                if (subscription.id < 0 || items.any { it.id == subscription.id }) return@withStateLock
+                val newItem = SubsItem(
+                    id = subscription.id,
+                    updateUrl = url,
+                    order = if (items.isEmpty()) 1 else items.maxOf { it.order } + 1,
+                    enable = true,
+                )
+                try {
+                    saveLocked(
+                        subscription = subscription,
+                        newItem = newItem,
+                        insertItem = true,
+                    )
+                } catch (e: CancellationException) {
+                    throw e
+                } catch (e: Exception) {
+                    LogUtils.d(e)
+                }
+            } catch (e: CancellationException) {
+                throw e
+            } catch (e: Exception) {
+                LogUtils.d(e)
+            }
+        }
     }
 
     private suspend fun ensureLocalSubscription(initialName: String) = withContext(Dispatchers.IO) {
