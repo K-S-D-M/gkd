@@ -223,8 +223,8 @@ fun AdvancedPage(
                 onClick = { mainVm.navigator.navigate(SnapshotPageRoute) },
             )
             GkSettingItem(
-                title = stringResource(Res.string.selector_picker),
-                subtitle = stringResource(Res.string.selector_picker_description),
+                title = "选择器生成器",
+                subtitle = "从快照生成选择器 Selector Picker",
                 onClick = { mainVm.navigator.navigate(SelectorPickerRoute()) },
             )
             GkTextSwitch(
