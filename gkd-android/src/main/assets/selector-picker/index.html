@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>Selector Picker 选择器生成器</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, "Noto Sans SC", "PingFang SC", sans-serif; background: #f5f5f5; color: #222; font-size: 14px; }
+  body.dark { background: #1a1a1a; color: #e0e0e0; }
+  .header { position: sticky; top: 0; background: #fff; padding: 12px 16px; border-bottom: 1px solid #e0e0e0; z-index: 10; }
+  body.dark .header { background: #242424; border-color: #333; }
+  .header h1 { font-size: 16px; margin-bottom: 2px; }
+  .header .sub { font-size: 12px; color: #888; }
+  .search { padding: 10px 16px; background: #fff; border-bottom: 1px solid #e0e0e0; }
+  body.dark .search { background: #242424; border-color: #333; }
+  .search input { width: 100%; padding: 10px 12px; border: 1px solid #ddd; border-radius: 8px; font-size: 14px; }
+  body.dark .search input { background: #333; border-color: #444; color: #e0e0e0; }
+  #nodeList { padding: 8px; }
+  .node { background: #fff; border-radius: 8px; margin-bottom: 8px; padding: 12px; border: 1px solid #e8e8e8; }
+  body.dark .node { background: #242424; border-color: #333; }
+  .node.selected { border-color: #1976d2; border-width: 2px; }
+  .node .t { font-weight: 600; margin-bottom: 4px; word-break: break-all; }
+  .node .m { font-size: 12px; color: #888; word-break: break-all; }
+  #detail { position: fixed; bottom: 0; left: 0; right: 0; max-height: 70%; background: #fff; border-top: 1px solid #e0e0e0; border-radius: 16px 16px 0 0; padding: 16px; overflow-y: auto; display: none; box-shadow: 0 -4px 20px rgba(0,0,0,0.1); }
+  body.dark #detail { background: #242424; border-color: #333; }
+  #detail.open { display: block; }
+  .sec { margin-bottom: 12px; border: 1px solid #e8e8e8; border-radius: 8px; overflow: hidden; }
+  body.dark .sec { border-color: #333; }
+  .sec-h { padding: 12px; background: #fafafa; cursor: pointer; font-weight: 600; display: flex; justify-content: space-between; align-items: center; }
+  body.dark .sec-h { background: #2c2c2c; }
+  .sec-h .bi { font-size: 12px; color: #888; font-weight: normal; }
+  .sec-b { padding: 12px; display: none; }
+  .sec.open .sec-b { display: block; }
+  .sel-row { display: flex; align-items: center; gap: 8px; margin-bottom: 8px; }
+  .sel-row code { flex: 1; background: #f0f0f0; padding: 8px 10px; border-radius: 6px; font-size: 12px; word-break: break-all; font-family: monospace; }
+  body.dark .sel-row code { background: #333; }
+  .btn { padding: 8px 14px; border: none; border-radius: 6px; background: #1976d2; color: #fff; font-size: 13px; cursor: pointer; white-space: nowrap; }
+  .btn:active { opacity: 0.8; }
+  .btn.ghost { background: #e0e0e0; color: #333; }
+  body.dark .btn.ghost { background: #444; color: #e0e0e0; }
+  .btn.big { width: 100%; padding: 12px; font-size: 15px; margin-top: 8px; }
+  .attr { font-size: 12px; color: #666; margin-bottom: 4px; word-break: break-all; }
+  body.dark .attr { color: #aaa; }
+  .empty { text-align: center; padding: 40px 20px; color: #999; }
+  .close-bar { text-align: right; margin-bottom: 8px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>选择器生成器 <span style="font-weight:normal;font-size:12px;color:#888">Selector Picker</span></h1>
+  <div class="sub">点击节点生成选择器 Tap a node to generate selectors · 点击标题折叠/展开 Tap header to collapse</div>
+</div>
+<div class="search">
+  <input id="q" type="search" placeholder="搜索文本 / id / desc · Search text / id / desc">
+</div>
+<div id="nodeList"></div>
+<div id="detail">
+  <div class="close-bar"><button class="btn ghost" onclick="closeDetail()">关闭 Close</button></div>
+  <div id="detailContent"></div>
+</div>
+<script>
+let nodes = [];
+let selected = null;
+
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+
+function nodeLabel(n){
+  const a = n.attr||{};
+  return a.text || a.desc || a.id || a.vid || ('node#' + n.id);
+}
+
+function init(data){
+  try {
+    const snap = typeof data === 'string' ? JSON.parse(data) : data;
+    nodes = (snap.nodes||[]).filter(n => {
+      const a = n.attr||{};
+      return (a.text||a.desc||a.id||a.vid);
+    });
+  } catch(e){ nodes = []; }
+  render('');
+}
+
+function render(q){
+  const list = document.getElementById('nodeList');
+  q = (q||'').toLowerCase();
+  const hit = nodes.filter(n => {
+    if(!q) return true;
+    const a = n.attr||{};
+    return [a.text,a.desc,a.id,a.vid].some(v => (v||'').toLowerCase().includes(q));
+  });
+  if(!hit.length){ list.innerHTML = '<div class="empty">无匹配节点 No matching nodes</div>'; return; }
+  list.innerHTML = hit.slice(0,300).map(n => {
+    const a = n.attr||{};
+    return '<div class="node'+(selected&&selected.id===n.id?' selected':'')+'" onclick="selectNode('+n.id+')">'
+      + '<div class="t">'+esc(nodeLabel(n))+'</div>'
+      + '<div class="m">'+esc([a.id,a.text,a.desc].filter(Boolean).join(' · '))+'</div>'
+      + '</div>';
+  }).join('');
+}
+
+function genSelectors(n){
+  const a = n.attr||{};
+  const out = [];
+  if(a.id) out.push({zh:'按 id 匹配', en:'Match by id', sel:'[id="'+a.id+'"]'});
+  if(a.vid) out.push({zh:'按 vid 匹配', en:'Match by vid', sel:'[vid="'+a.vid+'"]'});
+  if(a.text) out.push({zh:'按文本匹配', en:'Match by text', sel:'[text="'+a.text+'"]'});
+  if(a.desc) out.push({zh:'按描述匹配', en:'Match by desc', sel:'[desc="'+a.desc+'"]'});
+  return out;
+}
+
+function selectNode(id){
+  selected = nodes.find(n => n.id===id);
+  if(!selected) return;
+  render(document.getElementById('q').value);
+  const a = selected.attr||{};
+  const sels = genSelectors(selected);
+  let h = ''
+    + '<div class="sec open"><div class="sec-h" onclick="this.parentNode.classList.toggle(\'open\')">节点属性 Node attributes <span class="bi">点击折叠/展开 Tap to collapse</span></div><div class="sec-b">'
+    + ['id','vid','text','desc','clickable'].map(k=>'<div class="attr"><b>'+k+':</b> '+esc(a[k])+'</div>').join('')
+    + '</div></div>'
+    + '<div class="sec open"><div class="sec-h" onclick="this.parentNode.classList.toggle(\'open\')">选择器复制 Copy selectors <span class="bi">点击折叠/展开 Tap to collapse</span></div><div class="sec-b">';
+  if(!sels.length) h += '<div class="attr">无可用属性生成选择器 No attributes available</div>';
+  sels.forEach((s,i) => {
+    h += '<div style="margin-bottom:10px"><div class="attr">'+esc(s.zh)+' · '+esc(s.en)+'</div>'
+      + '<div class="sel-row"><code id="sel'+i+'">'+esc(s.sel)+'</code>'
+      + '<button class="btn" onclick="copySel(\'sel'+i+'\')">复制<br>Copy</button></div></div>';
+  });
+  h += '</div></div>';
+  if(sels.length){
+    h += '<button class="btn big" onclick="saveFirst()">保存到本地订阅<br>Save to local subscription</button>';
+  }
+  document.getElementById('detailContent').innerHTML = h;
+  document.getElementById('detail').classList.add('open');
+}
+
+function closeDetail(){ document.getElementById('detail').classList.remove('open'); selected=null; }
+
+function copySel(id){
+  const t = document.getElementById(id).innerText;
+  copyText(t);
+}
+function copyText(t){
+  if(window.GkdBridge && window.GkdBridge.copyText){ window.GkdBridge.copyText(t); return; }
+  if(navigator.clipboard){ navigator.clipboard.writeText(t); }
+  else { const ta=document.createElement('textarea'); ta.value=t; document.body.appendChild(ta); ta.select(); document.execCommand('copy'); ta.remove(); }
+  toast('已复制 Copied');
+}
+function saveFirst(){
+  const sels = genSelectors(selected);
+  if(!sels.length || !window.GkdBridge) return;
+  window.GkdBridge.saveSelector(sels[0].sel);
+}
+function toast(m){
+  if(window.GkdBridge && window.GkdBridge.toast){ window.GkdBridge.toast(m); }
+}
+document.getElementById('q').addEventListener('input', e => render(e.target.value));
+
+// Native 注入快照数据 / Injected by native via loadSnapshot(json)
+function loadSnapshot(json){ init(json); document.body.classList.toggle('dark', window.GkdBridge?window.GkdBridge.isDark():false); }
+</script>
+</body>
+</html>

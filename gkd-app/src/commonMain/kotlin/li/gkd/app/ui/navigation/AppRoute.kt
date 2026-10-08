@@ -100,6 +100,11 @@ data class SnapshotPreviewRoute(
 ) : AppRoute
 
 @Serializable
+data class SelectorPickerRoute(
+    val snapshotId: Long? = null,
+) : AppRoute
+
+@Serializable
 data object SnapshotSettingsRoute : AppRoute
 
 @Serializable

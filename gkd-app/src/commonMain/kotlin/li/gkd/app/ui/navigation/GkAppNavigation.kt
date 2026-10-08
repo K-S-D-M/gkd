@@ -61,6 +61,7 @@ fun GkAppNavigation(
                 is UpsertRuleGroupRoute -> UpsertRuleGroupPage(host, route)
                 is CategoryEditorRoute -> CategoryEditorPage(host, route)
                 is SnapshotPreviewRoute -> SnapshotPreviewPage(host, route)
+                is SelectorPickerRoute -> SelectorPickerPage(route, host)
                 is WebViewRoute -> WebViewPage(route, host)
                 is ImagePreviewRoute -> ImagePreviewPage(host, route)
 
